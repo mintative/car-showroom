@@ -1,0 +1,148 @@
+
+.card {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out;
+}
+.card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+.imageWrapper {
+    position: relative;
+    border-bottom: 1px solid #ccc;
+    
+}
+.discount {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: white;
+    background-color: rgb(249, 53, 53);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+.info {
+    padding: 20px;
+}
+.mainFlex {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    
+}
+.price {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin:0;
+}
+.title {
+    font-size: 20px;
+    margin: 0;
+}
+.description {
+    font-size: 14px;
+    color: #666;
+}
+.brand {
+    font-size: 14px;
+    color: #666;
+}
+.rating {
+    font-size: 18px;
+    color: #666;
+}
+.rating span {
+    color: orange;
+}
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+.tag {
+    background-color: #eee;
+    color: #333;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+}
+.extraInfo {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.shipping {
+    flex: 1;
+
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: bold;
+    color: #a939e2;
+    background-color: #f5eeff;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+.shipping p {
+    margin: 0;
+}
+.shippingIcon {
+    font-size: 20px;
+}
+.stock {
+    flex: 1;
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: bold;
+    color: #2fa30c;
+    background-color: #e3f2dd;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+.stock p {
+    margin: 0;
+}
+.stockIcon {
+    font-size: 20px;
+}
+.bottom {
+    display: flex;
+    justify-content: end;
+    margin-top: 20px;
+}
+.button {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #4c5caf;
+    color: white;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background-color 0.3s ease-in-out;
+    
+}
+.button:hover {
+    background-color: #3b4a8c;
+}

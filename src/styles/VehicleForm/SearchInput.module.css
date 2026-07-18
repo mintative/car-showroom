@@ -1,0 +1,54 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  width: 100%;
+  height: 52px;
+
+  padding: 0 18px;
+
+  background: #fff;
+  border: 1px solid #d9dee7;
+  border-radius: 12px;
+
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+
+.searchIcon {
+  width: 20px;
+  height: 20px;
+  color: #667085;
+  flex-shrink: 0;
+}
+.resetIconButton {
+    background-color: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+}
+.resetIcon {
+  width: 20px;
+  height: 20px;
+  color: #667085;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.input {
+  flex: 1;
+
+  border: none;
+  outline: none;
+
+  font-size: 16px;
+  font-family: inherit;
+
+  color: #1d2939;
+  background: transparent;
+}
+
+.input::placeholder {
+  color: #98a2b3;
+}

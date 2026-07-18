@@ -1,0 +1,12 @@
+.container {
+}
+.mainTitle {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 20px;
+}

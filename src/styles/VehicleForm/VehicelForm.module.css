@@ -1,0 +1,17 @@
+.container {
+    
+}
+.top {
+    display: flex;
+    gap: 20px;
+}
+.filterButton {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+    padding: 10px 20px ;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
