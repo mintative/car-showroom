@@ -2,20 +2,20 @@ import s from "../../../styles/VehicleForm/VehicleFilter.module.css";
 import type { Filter } from "../../../types/types";
 
 type Props = {
-  filter:Filter;
-  setFilter: React.Dispatch<React.SetStateAction<Filter>>;
+  filters:Filter;
+  setFilters: React.Dispatch<React.SetStateAction<Filter>>;
 };
 
 const Availability = (props:Props) => {
     const onHandleChange = (value:Filter["availability"]) => {
-        props.setFilter((prev)=>({...prev, availability:value}))
+        props.setFilters((prev)=>({...prev, availability:value}))
     }
 
     return (
         <div className={s.group}>
           <label className={s.label}>Availability</label>
 
-          <select className={s.select} value={props.filter.availability} onChange={(e)=>{onHandleChange(e.target.value as Filter["availability"])}}>
+          <select className={s.select} value={props.filters.availability} onChange={(e)=>{onHandleChange(e.target.value as Filter["availability"])}}>
             <option value="all">All</option>
             <option value="inStock">In Stock</option>
             <option value="outOfStock">Out of Stock</option>

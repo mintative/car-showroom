@@ -5,38 +5,46 @@ import Availability from "./Availability";
 import Brand from "./Brand";
 import Price from "./Price";
 import Rating from "./Rating";
-import { initialFilter } from "../../../pages/Home/Home";
-
 type Props = {
-  filter:Filter;
-  setFilter: React.Dispatch<React.SetStateAction<Filter>>;
+  filters:Filter;
+  setFilters: React.Dispatch<React.SetStateAction<Filter>>;
+  clearAllFilters: ()=> void;
+  applyFilters: ()=>void;
+  brands:{id:number, brand:string}[];
 };
 const VehicleFilter = (props:Props) => {
-    const [filter, setFilter] = useState<Filter>(initialFilter);
-
-    const clearAll = () => {
-        setFilter(initialFilter);
+    const [error, setError] = useState("");
+    
+    const localFilter = () => {
+      if (props.filters.price.max!==undefined && props.filters.price.min !==undefined && props.filters.price.max<props.filters.price.min) {
+        setError("Min price can't be bigger than max price");
+        return
+      }
+      props.applyFilters();
+      
     }
   return (
     <section className={s.container}>
       <div className={s.filters}>
-        <Availability filter={filter} setFilter={setFilter} />
+        <Availability filters={props.filters} setFilters={props.setFilters} />
 
         
         
-        <Brand filter={filter} setFilter={setFilter} />
-        <Rating filter={filter} setFilter={setFilter} />      
-        <Price filter={filter} setFilter={setFilter} />
+        <Brand filters={props.filters} setFilters={props.setFilters} brands={props.brands} />
+        <Rating filters={props.filters} setFilters={props.setFilters} />      
+        <Price filters={props.filters} setFilters={props.setFilters} error={error} />
         
       </div>
-
+      
       <div className={s.actions}>
-        <button onClick={clearAll} className={s.clear}>Clear all</button>
+        <button onClick={props.clearAllFilters} className={s.clear}>Clear all</button>
 
-        <button className={s.apply}>
+        <button onClick={localFilter} className={s.apply}>
           Apply filters
         </button>
       </div>
+      
+      
     </section>
   );
 };

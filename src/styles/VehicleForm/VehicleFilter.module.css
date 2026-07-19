@@ -12,13 +12,15 @@
 .filters {
     display: flex;
     justify-content: space-between;
-    align-items: end;
+    align-items: start;
+    gap: 20px;
 }
 
 .group {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    flex: 1;
 }
 
 .label {
@@ -93,4 +95,10 @@
     background: #2563eb;
     color: white;
     cursor: pointer;
+}
+
+.error {
+    color: rgb(194, 0, 0);
+    display: flex;
+    justify-content: end;
 }

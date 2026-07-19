@@ -9,6 +9,7 @@ export type Vehicle = {
     returnPolicy: string;
     shippingInformation: string;
     warrantyInformation: string;
+    availabilityStatus: string;
     sku: string;
     reviews: {
         reviewerName: string;
@@ -32,9 +33,9 @@ export type Vehicle = {
 export type Filter = {
     availability: "inStock" | "outOfStock" | "all",
     brand: string,
-    rating: 1 | 2 | 3 | 4 | null,
+    rating?: 1 | 2 | 3 | 4,
     price: {
-        min: number | null,
-        max:number | null
+        min?: number,
+        max?:number
     }
 }

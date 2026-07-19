@@ -1,17 +1,19 @@
 import { useEffect, useState } from "react";
-import type { Vehicle } from "../../types/types";
+import type { Filter, Vehicle } from "../../types/types";
 import { getVehicles } from "../../services/api";
 import s from '../../styles/VehicleList/VehicelList.module.css';
 import VehicleCard from "./VehicleCard";
 
 type Props = {
-  searchValue:string;
-}
+  filters:Filter;
+  searchValue: string;
+};
 
 
 const VehicleList = (props:Props) => {
     const [allVehicles, setAllVehicles] = useState<Vehicle[]>([]);
     const [vehicles, setVehicles] = useState<Vehicle[]>([])
+
 
     useEffect(() => {
         const fetchVehicles = async () => {
@@ -26,30 +28,74 @@ const VehicleList = (props:Props) => {
 
         fetchVehicles();
     }, []);
-    function search(value:string) {
-      if (!value.trim()) {
-        setVehicles(allVehicles);
-        return
-      }
+    
+    useEffect(() => {
+    let result = [...allVehicles];
 
-      setVehicles(allVehicles.filter((vehicle)=>
-        vehicle.title.toLowerCase().includes(value.toLowerCase()) ||
-        vehicle.brand.toLowerCase().includes(value.toLowerCase()) ||
-        vehicle.sku.toLowerCase().includes(value.toLowerCase())
-      ));
+    if (props.searchValue.trim()) {
+      result = result.filter(vehicle =>
+        vehicle.title.toLowerCase().includes(props.searchValue.toLowerCase()) ||
+        vehicle.brand.toLowerCase().includes(props.searchValue.toLowerCase()) ||
+        vehicle.sku.toLowerCase().includes(props.searchValue.toLowerCase())
+      );
     }
-    useEffect(()=>{
-      search(props.searchValue);
-    },[props.searchValue])
-    console.log(vehicles);
+
+    switch (props.filters.availability) {
+      case "inStock":
+        result = result.filter(
+          vehicle => vehicle.availabilityStatus === "In Stock"
+        );
+        break;
+
+      case "outOfStock":
+        result = result.filter(
+          vehicle => vehicle.availabilityStatus === "Out Of Stock"
+        );
+        break;
+
+      case "all":
+      default:
+        break;
+    }
+    if (props.filters.brand !== "all") {
+      result = result.filter(vehicle=>vehicle.brand === props.filters.brand)
+    }
+    const rating = props.filters.rating;
+
+    if (rating !== undefined) {
+      result = result.filter(vehicle => vehicle.rating > rating);
+    }
+
+    const minPrice = props.filters.price.min;
+
+    if (minPrice !== undefined) {
+      result = result.filter(vehicle => vehicle.price > minPrice)
+    }
+
+    const maxPrice = props.filters.price.max;
+
+    if (maxPrice !== undefined) {
+      result = result.filter(vehicle => vehicle.price < maxPrice)
+    }
+
+    setVehicles(result);
+
+  }, [allVehicles, props.searchValue, props.filters]);
+    
+
   return (
     <div className={s.container}>
       <h1 className={s.mainTitle}>Vehicle List</h1>
+      {vehicles.length>0 ?
       <section className={s.list}>
+        
         {vehicles.map((vehicle) => (
           <VehicleCard key={vehicle.id} vehicle={vehicle} />
-        ))}
+        )) }
+        
       </section>
+      : <div className={s.empty}>{"There are no vehicles here :("}</div>
+        }
     </div>
   );
 };
