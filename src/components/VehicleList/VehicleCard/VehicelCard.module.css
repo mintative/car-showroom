@@ -133,14 +133,14 @@
 .button {
     display: inline-block;
     text-decoration: none;
-    background-color: #4c5caf;
+    background-color: #2563eb;
     color: white;
     padding: 10px 20px;
     margin-top: 10px;
     border-radius: 5px;
     font-size: 14px;
     font-weight: bold;
-    transition: background-color 0.3s ease-in-out;
+    transition: .3s;
     
 }
 .button:hover {

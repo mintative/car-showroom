@@ -1,5 +1,5 @@
 import { useState } from "react";
-import s from "../../../styles/VehicleForm/VehicleFilter.module.css";
+import s from "./VehicleFilter.module.css";
 import type { Filter } from "../../../types/types";
 import Availability from "./Availability";
 import Brand from "./Brand";
@@ -20,6 +20,7 @@ const VehicleFilter = (props:Props) => {
         setError("Min price can't be bigger than max price");
         return
       }
+      setError("");
       props.applyFilters();
       
     }

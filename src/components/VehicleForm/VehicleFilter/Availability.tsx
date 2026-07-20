@@ -1,4 +1,4 @@
-import s from "../../../styles/VehicleForm/VehicleFilter.module.css";
+import s from "./VehicleFilter.module.css";
 import type { Filter } from "../../../types/types";
 
 type Props = {

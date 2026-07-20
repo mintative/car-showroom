@@ -1,0 +1,37 @@
+.container {
+
+}
+
+.stars {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.starButton {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+
+    font-size: 30px;
+    color: #f59e0b;
+
+    transition: transform .15s ease;
+}
+
+.starButton:hover {
+    transform: scale(1.15);
+}
+
+.text {
+    margin-left: 8px;
+    color: #666;
+    font-size: 14px;
+}
+.error {
+    color: rgb(194, 0, 0);
+}

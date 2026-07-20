@@ -1,0 +1,17 @@
+.backButton {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 10px 16px;
+    border-radius: 8px;
+
+    color: #2563eb;
+    text-decoration: none;
+
+    transition: background-color .2s ease;
+}
+
+.backButton:hover {
+    background-color: #e7efff;
+}

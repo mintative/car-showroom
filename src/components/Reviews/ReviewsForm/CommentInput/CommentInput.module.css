@@ -1,0 +1,31 @@
+.container {
+    
+}
+.title {
+
+}
+.inputWrapper {
+    position: relative;
+}
+.textarea {
+    font: inherit;
+    box-sizing: border-box;
+    width: 100%;
+    height: 200px;
+    padding: 20px;
+
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    resize: none;
+    font-size: 18px;
+}
+.lettersCount {
+    position: absolute;
+    bottom: 20px;
+    right: 10px;
+    color: #666;
+}
+
+.error {
+    color: rgb(194, 0, 0);
+}

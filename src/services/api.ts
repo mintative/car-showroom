@@ -16,5 +16,12 @@ const getVehicleBrands = async () => {
   return response.json();
 };
 
+const getVehicleById = async (id:number) => {
+  const response = await fetch(`https://dummyjson.com/products/${id}`);
+  if (!response.ok) {
+    throw new Error('Failed to fetch vehicles');
+  }
+  return response.json();
+};
 
-export { getVehicles, getVehicleBrands };
+export { getVehicles, getVehicleBrands, getVehicleById };

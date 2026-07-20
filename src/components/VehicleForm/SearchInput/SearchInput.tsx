@@ -1,4 +1,4 @@
-import s from "../../styles/VehicleForm/SearchInput.module.css";
+import s from "./SearchInput.module.css";
 import { IoSearch } from "react-icons/io5";
 import { IoCloseSharp } from "react-icons/io5";
 
@@ -19,6 +19,7 @@ const SearchInput = (props:Props) => {
         className={s.input}
         type="text"
         value={props.searchValue}
+        maxLength={100}
         onChange={(e)=>{props.setSearchValue(e.target.value)}}
         placeholder="Search vehicles by make, model, or sku..."
       />

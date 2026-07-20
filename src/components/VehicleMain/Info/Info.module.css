@@ -1,0 +1,189 @@
+.container {
+    
+}
+
+/* Main */
+.mainInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 20px;
+}
+
+
+.price {
+    font-size: 25px;
+    font-weight: bold;
+    color: #333;
+    margin:0;
+}
+.title {
+    font-size: 30px;
+    margin: 0;
+}
+.description {
+    font-size: 14px;
+    color: #666;
+    max-width: 400px;
+}
+.brand {
+    font-size: 16px;
+    color: #666;
+    margin-top: 15px;
+}
+.ratingWrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+.reviewsButton {
+    cursor: pointer;
+    border: none;
+    font-size: 14px;
+    background-color: transparent;
+    color: #2563eb;
+    white-space: nowrap;
+}
+.rating {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 5px;
+    font-size: 18px;
+    color: #666;
+}
+.rating span {
+    color: orange;
+    display: flex;
+    align-items: center;
+}
+.rate {
+    font-size: 14px;
+}
+.ratingRight {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 30px;
+}
+.tag {
+    background-color: #eee;
+    color: #333;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+}
+/* Extra */
+.extra {
+    display: flex;
+    justify-content: space-between;
+    gap:10px;
+    margin-top: 20px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 20px;
+}
+
+.extraItem {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-right: 1px solid #ccc;
+    padding: 0px 20px;
+}
+.extraItem:first-child {
+    padding: 0px 20px 0px 0px;
+
+}
+.extraItem:last-child {
+    border-right: none;
+}
+.extraIcon {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    
+    
+}
+.availabilityIcon {
+    background-color: #e3f2dd;
+    border: 1px solid #2fa30c;
+    color: #2fa30c;
+}
+.availabilityTitle {
+    color: #2fa30c;
+}
+.shippingIcon {
+    color: #a939e2;
+    border: 1px solid #a939e2;
+    background-color: #f5eeff;
+}
+.shippingTitle {
+    color: #a939e2;
+}
+.warrantyIcon {
+    color: #2563eb;
+    background-color: #e7efff;
+    border: 1px solid #2563eb;
+}
+.warrantyTitle {
+    color: #2563eb;
+}
+.returnIcon {
+    color: rgb(180, 87, 0);
+    background-color: rgb(255, 255, 240);
+    border: 1px solid rgb(180, 87, 0)
+}
+.returnTitle {
+    color: rgb(180, 87, 0);
+}
+
+.extraInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+}
+
+.extraTitle {
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0;
+}
+.extraPar {
+    font-size: 14px;
+    margin: 0;
+}
+
+
+/* Details */
+.details {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    row-gap: 20px;
+    column-gap: 50px;
+    padding-top: 20px;
+}
+.detailsItem {
+    display: flex;
+    justify-content: space-between;
+}
+.detailsTitle {
+    font-size: 14px;
+    font-weight: bold;
+}
+.detailsValue {
+    font-size: 14px;
+    color: #666;
+}

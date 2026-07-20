@@ -1,0 +1,66 @@
+.container {
+    border-top: 1px solid #ccc;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.reviewer {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 20px;
+}
+.reviewerAvatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    width: 50px;
+    height: 50px;
+    background-color: #e7efff;
+    color: #2563eb;
+    font-weight: bold;
+}
+.reviewerInfo {
+
+}
+.reviewerName {
+    font-size: 20px;
+}
+
+
+
+
+
+.rating {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    flex: 1;
+    font-size: 25px;
+    color: #666;
+}
+.rating span {
+    color: orange;
+}
+
+.time {
+    display: flex;
+    justify-content: end;
+    flex: 1;
+    color: #666;
+}
+.bottom {
+    padding: 10px;
+}
+.comment {
+    margin: 0;
+    font-size: 18px;
+}

@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import type { Filter, Vehicle } from "../../types/types";
 import { getVehicles } from "../../services/api";
-import s from '../../styles/VehicleList/VehicelList.module.css';
-import VehicleCard from "./VehicleCard";
+import s from './VehicelList.module.css';
+import VehicleCard from "./VehicleCard/VehicleCard";
 
 type Props = {
   filters:Filter;

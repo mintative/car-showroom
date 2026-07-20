@@ -4,3 +4,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; 
 }
+html {
+    scroll-behavior: smooth;
+}
+@media(max-width: 1440px) {
+  body {
+    margin: 20px 100px;
+  }
+}

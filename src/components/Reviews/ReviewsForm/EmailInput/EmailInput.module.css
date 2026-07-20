@@ -1,0 +1,16 @@
+.container {
+    flex: 1;
+}
+
+.input {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 20px;
+
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 18px;
+}
+.error {
+    color: rgb(194, 0, 0);
+}

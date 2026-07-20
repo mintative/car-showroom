@@ -1,7 +1,6 @@
-import { useEffect, useState } from "react";
-import s from "../../../styles/VehicleForm/VehicleFilter.module.css";
+
+import s from "./VehicleFilter.module.css";
 import type { Filter } from "../../../types/types";
-import { getVehicleBrands } from "../../../services/api";
 
 type Props = {
   filters:Filter;

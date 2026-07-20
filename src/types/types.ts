@@ -1,3 +1,11 @@
+export type Review = {
+        reviewerName: string;
+        reviewerEmail: string;
+        comment: string;
+        rating: number;
+        date: string;
+    }
+
 export type Vehicle = {
     id: number;
     title: string;
@@ -10,14 +18,10 @@ export type Vehicle = {
     shippingInformation: string;
     warrantyInformation: string;
     availabilityStatus: string;
+    minimumOrderQuantity: number;
+    weight:number;
     sku: string;
-    reviews: {
-        reviewerName: string;
-        reviewerEmail: string;
-        comment: string;
-        rating: number;
-        date: string;
-    }[];
+    reviews: Review[];
 
     brand: string;
     category: string;
@@ -38,4 +42,14 @@ export type Filter = {
         min?: number,
         max?:number
     }
+}
+
+
+export type Comment = {
+    vehicleId?:number;
+    rating: number;
+    comment: string;
+    reviewerName: string;
+    reviewerEmail:string;
+    date:string;
 }

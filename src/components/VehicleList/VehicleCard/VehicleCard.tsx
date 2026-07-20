@@ -1,5 +1,5 @@
-import type { Vehicle } from "../../types/types";
-import s from '../../styles/VehicleList/VehicelCard.module.css';
+import type { Vehicle } from "../../../types/types";
+import s from './VehicelCard.module.css';
 import { IoStarSharp } from "react-icons/io5";
 import { IoStarOutline } from "react-icons/io5";
 import { FiBox } from "react-icons/fi";
@@ -46,7 +46,7 @@ const VehicleCard = ({ vehicle }: { vehicle: Vehicle }) => {
             
         </div>
         <div className={s.bottom}>
-            <a href="" className={s.button}>
+            <a href={`/vehicles/${vehicle.id}`} className={s.button}>
                 View Details
             </a>
         </div>

@@ -1,4 +1,4 @@
-import s from "../../../styles/VehicleForm/VehicleFilter.module.css";
+import s from "./VehicleFilter.module.css";
 import { IoStarSharp } from "react-icons/io5";
 import { IoStarOutline } from "react-icons/io5";
 import type { Filter } from "../../../types/types";
