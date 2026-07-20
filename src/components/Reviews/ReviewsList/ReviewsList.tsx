@@ -1,4 +1,4 @@
-import type { Comment, Vehicle } from '../../../types/types';
+import type { Comment} from '../../../types/types';
 import ReviewCard from './ReviewCard/ReviewCard';
 import s from './ReviewsList.module.css';
 
