@@ -10,14 +10,22 @@ const Gallery = ({ vehicle }: { vehicle: Vehicle }) => {
     const [currentIndex,setCurrentIndex] = useState<number>(0);
     const imageRefs = useRef<(HTMLDivElement | null)[]>([]);
     const activeImage = vehicle.images[currentIndex];
+    const [isLoading,setIsLoading] = useState<boolean>(true);
+    const [isScrollerImagesLoading, setIsScrollerImagesLoading] = useState(()=>vehicle.images.map(()=>true));
     
+    const handleScrollerImageLoad = (index:number) => {
+        setIsScrollerImagesLoading(prev=>
+            prev.map((loading,i)=> (i===index ? false : loading))
+        );
+    };
+
     useEffect(() => {
-    imageRefs.current[currentIndex]?.scrollIntoView({
-        behavior: "smooth",
-        inline: "center",
-        block: "nearest",
-    });
-}, [currentIndex]);
+        imageRefs.current[currentIndex]?.scrollIntoView({
+            behavior: "smooth",
+            inline: "center",
+            block: "nearest",
+        });
+    }, [currentIndex]);
 
     const onNextImageClick = () => {
         
@@ -26,7 +34,7 @@ const Gallery = ({ vehicle }: { vehicle: Vehicle }) => {
             return
         }
         setCurrentIndex(newIndex);
-    }
+    };
     const onPrevImageClick = () => {
         
         const newIndex = currentIndex-1;
@@ -34,24 +42,26 @@ const Gallery = ({ vehicle }: { vehicle: Vehicle }) => {
             return
         }
         setCurrentIndex(newIndex);
-    }
+    };
 
     const onScrollerImageClick = (index:number) => {
         setCurrentIndex(index);
         
-    }
+    };
     return (
         <div className={s.container}>
             <div className={s.imageWrapper}>
+                {isLoading && <div className={s.skeleton}></div>}
                 <div className={s.discount}>-{vehicle.discountPercentage}% </div>
                 <button onClick={onPrevImageClick} className={s.leftArrow}><FaArrowLeft/></button>
-                <img src={activeImage} alt={vehicle.title} className={s.image} />
+                <img src={activeImage} alt={vehicle.title} className={s.image} onLoad={() => setIsLoading(false)} onError={() => setIsLoading(false)} />
                 <button onClick={onNextImageClick} className={s.rightArrow}><FaArrowRight/></button>
             </div>
             <div className={s.imagesScroller}>
                 {vehicle.images.map((image,index)=>(
                     <div key={image} ref={(el)=>{imageRefs.current[index]=el}} onClick={()=>{onScrollerImageClick(index)}}  className={`${s.scrollerImageWrapper} ${currentIndex===index && s.activeImage}`}>
-                        <img src={image} alt={vehicle.title} className={s.scrollerImage} />
+                        {isScrollerImagesLoading[index] && <div className={s.skeleton}></div>}
+                        <img src={image} alt={vehicle.title} className={s.scrollerImage} onLoad={() => handleScrollerImageLoad(index)} onError={() => handleScrollerImageLoad(index)} />
                     </div>
                 ))}
             </div>

@@ -27,7 +27,7 @@ const VehicleDetails = () => {
     console.log(vehicle);
 
     return (
-        <div className={s.container}>
+        <main className={s.container}>
             <a href='/' className={s.backButton}><FaArrowLeft /> <span>Back to list</span></a>
             {vehicle 
             ? <>
@@ -37,9 +37,9 @@ const VehicleDetails = () => {
             </>
             
             : 
-            <div>Loading...</div>}
+            <div className={s.loading}>Loading...</div>}
             
-        </div>
+        </main>
     )
 }
 

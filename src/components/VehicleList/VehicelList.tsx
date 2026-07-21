@@ -12,7 +12,8 @@ type Props = {
 
 const VehicleList = (props:Props) => {
     const [allVehicles, setAllVehicles] = useState<Vehicle[]>([]);
-    const [vehicles, setVehicles] = useState<Vehicle[]>([])
+    const [vehicles, setVehicles] = useState<Vehicle[]>([]);
+    const [loading,setLoadning] = useState<boolean>(true);
 
 
     useEffect(() => {
@@ -21,6 +22,7 @@ const VehicleList = (props:Props) => {
                 const data = await getVehicles();
                 setAllVehicles(data.products);
                 setVehicles(data.products);
+                setLoadning(false);
             } catch (error) {
                 console.error('Error fetching vehicles:', error);
             }
@@ -86,7 +88,8 @@ const VehicleList = (props:Props) => {
   return (
     <div className={s.container}>
       <h1 className={s.mainTitle}>Vehicle List</h1>
-      {vehicles.length>0 ?
+      {!loading ? 
+      <>{vehicles.length>0 ?
       <section className={s.list}>
         
         {vehicles.map((vehicle) => (
@@ -95,7 +98,10 @@ const VehicleList = (props:Props) => {
         
       </section>
       : <div className={s.empty}>{"There are no vehicles here :("}</div>
-        }
+        }</>
+      : <div className={s.empty}>{"Loading..."}</div>
+      }
+      
     </div>
   );
 };

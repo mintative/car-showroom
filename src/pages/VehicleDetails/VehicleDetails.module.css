@@ -15,3 +15,12 @@
 .backButton:hover {
     background-color: #e7efff;
 }
+
+.loading {
+    text-align: center;
+    background-color: #e8e8e8;
+    padding: 20px;
+    font-size: 18px;
+    width: 100%;
+    border-radius: 10px;
+}

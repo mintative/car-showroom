@@ -36,3 +36,17 @@
     font-size: 14px;
     font-weight: bold;
 }
+
+@media (max-width:768px) {
+    .top {
+        flex-direction: column;
+    }
+    .filterButton {
+        justify-content: center;
+    }
+    .filtersCount {
+        width: 20px;
+        height: 20px;
+        font-size: 12px;
+    }
+}

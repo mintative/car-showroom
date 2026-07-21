@@ -2,6 +2,7 @@ import VehicleList from "../../components/VehicleList/VehicelList";
 import VehicleForm from "../../components/VehicleForm/VehicleForm";
 import { useState } from "react";
 import type { Filter } from "../../types/types";
+import s from './Home.module.css';
 
 
 export const initialFilters:Filter = {
@@ -45,10 +46,10 @@ const Home = () => {
     const filtersCount = getFiltersCount();
 
     return (
-        <div>
+        <main className={s.container}>
         <VehicleForm filters={draftFilters} setFilters={setDraftFilters} clearAllFilters={clearAllFilters} applyFilters={applyFitlers} searchValue={searchValue} setSearchValue={setSearchValue} filtersCount={filtersCount}/>
         <VehicleList filters={filters} searchValue={searchValue} />
-        </div>
+        </main>
     );
 };
 

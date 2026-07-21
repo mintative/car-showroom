@@ -7,14 +7,21 @@
 
 .list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     gap: 20px;
 }
 .empty {
+    box-sizing: border-box;
     text-align: center;
     background-color: #e8e8e8;
     padding: 20px;
     font-size: 18px;
     width: 100%;
     border-radius: 10px;
+}
+
+@media (max-width:768px) {
+    .list {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
 }

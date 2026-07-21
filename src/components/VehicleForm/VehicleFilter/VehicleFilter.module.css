@@ -12,6 +12,7 @@
 .filters {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     align-items: start;
     gap: 20px;
 }
@@ -39,7 +40,6 @@
 
 .ratingButtons {
     display: flex;
-    justify-content: space-between;
     gap: 10px;
 }
 
@@ -47,8 +47,7 @@
     display: flex;
     align-items: center;
     gap: 5px;
-    height: 46px;
-    padding: 0 18px;
+    padding: 14px;
     font-size: 16px;
     border-radius: 10px;
     border: 1px solid #d9dde5;
@@ -106,4 +105,38 @@
     color: rgb(194, 0, 0);
     display: flex;
     justify-content: end;
+}
+
+@media (max-width:768px) {
+    .container {
+        padding: 10px;
+    }
+    .filters {
+        gap: 10px;
+    }
+    .actions {
+        justify-content: space-between;
+    }
+    .apply {
+        padding: 10px 20px;
+    }
+    .ratingButton {
+        padding: 14px;
+        height: auto;
+        font-size: 12px;
+    }
+    .select,
+    .priceInputs input {
+        height: 40px;
+        padding: 0 10px;
+        font-size: 14px;
+    }
+    .priceInputs {
+        gap: 5px;
+    }
+    .priceInputs input {
+        width: auto;
+        min-width: 80px;
+    }
+
 }
