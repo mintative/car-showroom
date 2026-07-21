@@ -10,6 +10,9 @@ import { FaArrowLeft } from "react-icons/fa";
 const VehicleDetails = () => {
     const {id} = useParams();
     const [vehicle, setVehicle] = useState<Vehicle | null>(null)
+    const [isLoading, setIsLoadind] = useState<boolean>(true);
+    const [fetchError,setFetchError] = useState<string>('');
+
 
 
     useEffect(() => {
@@ -17,8 +20,13 @@ const VehicleDetails = () => {
             try {
                 const data = await getVehicleById(Number(id));
                 setVehicle(data);
+                setIsLoadind(false);
+                setFetchError('');
             } catch (error) {
+                setIsLoadind(false);
+                setFetchError(`Error fetching vehicle details`);
                 console.error('Error fetching vehicle details:', error);
+
             }
         };
 
@@ -30,14 +38,15 @@ const VehicleDetails = () => {
         <main className={s.container}>
             <a href='/' className={s.backButton}><FaArrowLeft /> <span>Back to list</span></a>
             {vehicle 
-            ? <>
+            && <>
                 
                 <VehicleMain vehicle={vehicle} /> 
                 <Reviews reviews={vehicle.reviews} vehicleId={vehicle.id} />
             </>
+            }
             
-            : 
-            <div className={s.loading}>Loading...</div>}
+            {isLoading && <div className={s.loading}>Loading...</div>}
+            {fetchError && <div className={s.error}>{fetchError}</div>}
             
         </main>
     )

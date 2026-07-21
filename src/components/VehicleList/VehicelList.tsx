@@ -13,24 +13,30 @@ type Props = {
 const VehicleList = (props:Props) => {
     const [allVehicles, setAllVehicles] = useState<Vehicle[]>([]);
     const [vehicles, setVehicles] = useState<Vehicle[]>([]);
-    const [loading,setLoadning] = useState<boolean>(true);
+    const [loading,setLoading] = useState<boolean>(true);
+    const [fetchError, setFetchError] = useState<string>('');
 
 
     useEffect(() => {
         const fetchVehicles = async () => {
             try {
                 const data = await getVehicles();
+                 console.log(data);
                 setAllVehicles(data.products);
                 setVehicles(data.products);
-                setLoadning(false);
+                setLoading(false);
+                setFetchError('');
             } catch (error) {
+              console.log("Error");
+                setLoading(false);
+                setFetchError("Error fetching vehicles");
                 console.error('Error fetching vehicles:', error);
             }
         };
 
         fetchVehicles();
     }, []);
-    
+    console.log(fetchError);
     useEffect(() => {
     let result = [...allVehicles];
 
@@ -84,12 +90,22 @@ const VehicleList = (props:Props) => {
 
   }, [allVehicles, props.searchValue, props.filters]);
     
+  if (loading) {
+    return <div className={s.loading}>Loading...</div>;
+  }
+
+  if (fetchError) {
+    return <div className={s.error}>{fetchError}</div>;
+  }
+
+  if (vehicles.length === 0) {
+    return <div className={s.empty}>There are no vehicles here :(</div>;
+  }
 
   return (
     <div className={s.container}>
       <h1 className={s.mainTitle}>Vehicle List</h1>
-      {!loading ? 
-      <>{vehicles.length>0 ?
+  
       <section className={s.list}>
         
         {vehicles.map((vehicle) => (
@@ -97,11 +113,6 @@ const VehicleList = (props:Props) => {
         )) }
         
       </section>
-      : <div className={s.empty}>{"There are no vehicles here :("}</div>
-        }</>
-      : <div className={s.empty}>{"Loading..."}</div>
-      }
-      
     </div>
   );
 };

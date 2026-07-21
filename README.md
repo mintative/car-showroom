@@ -35,7 +35,7 @@ The application is deployed on **Vercel** and connected to a custom domain.
 ## 🛠 Tech Stack
 
 * HTML5
-* JavaScript
+* TypeScript
 * React
 * React Router
 * Vite

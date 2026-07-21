@@ -1,5 +1,6 @@
 import type { FormErrors } from "../components/Reviews/ReviewsForm/ReviewsForm";
 import type { Comment } from "../types/types";
+import isEmail from "validator/lib/isEmail";
 
 export const validateReview = (formData:Comment) => {
     const errors: FormErrors = {
@@ -27,9 +28,7 @@ export const validateReview = (formData:Comment) => {
 
     if (!formData.reviewerEmail.trim()) {
         errors.emailError = "Email is required.";
-    } else if (
-        !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.reviewerEmail)
-    ) {
+    } else if (!isEmail(formData.reviewerEmail)) {
         errors.emailError = "Please enter a valid email.";
     }
 
