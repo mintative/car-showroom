@@ -1,75 +1,72 @@
-# React + TypeScript + Vite
+# 🚗 Car Showroom
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A single-page application built as a test assignment for the **Intern Frontend Developer** position. The project simulates a virtual car showroom where users can browse available vehicles, search and filter the catalog, view detailed information about each car, and leave reviews.
 
-Currently, two official plugins are available:
+## 🌐 Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+**https://car-showroom.mintative.com**
 
-## React Compiler
+The application is deployed on **Vercel** and connected to a custom domain.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## ✨ Features
 
-## Expanding the ESLint configuration
+* Browse a catalog of vehicles fetched from the **DummyJSON API**.
+* Search vehicles by:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+  * Brand
+  * Model
+  * SKU
+* Filter vehicles by:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+  * Availability
+  * Brand
+  * Rating
+  * Minimum price
+  * Maximum price
+* View a detailed page for each vehicle.
+* Image gallery with a photo slider.
+* Display both primary and additional vehicle information.
+* Add your own reviews using a validated form.
+* Inline validation messages displayed next to invalid fields.
+* User reviews are stored in **localStorage** and persist after page refresh.
+* Reviews are sorted by creation date (newest first).
+* Fully responsive layout optimized for desktop, tablet, and mobile devices.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 🛠 Tech Stack
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+* React
+* React Router
+* Vite
+* CSS Modules
+* DummyJSON API
+* LocalStorage
 
+## 🚀 Getting Started
+
+### Prerequisites
+
+* Node.js (latest LTS version recommended)
+
+### Installation
+
+```bash
+git clone <repository-url>
+cd <project-folder>
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Run the development server
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```bash
+npm run dev
 ```
+
+After that, open the local URL displayed in the terminal (usually **http://localhost:5173**).
+
+## 📂 Project Structure
+
+The project follows a modular structure with reusable React components, separated pages, API utilities, and CSS Modules for component-scoped styling.
+
+## 📌 Notes
+
+This project was developed as a frontend test assignment with a focus on clean architecture, responsive design, form validation, reusable components, and a user-friendly interface.
