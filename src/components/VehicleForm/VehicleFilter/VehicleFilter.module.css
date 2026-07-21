@@ -33,6 +33,7 @@
 .priceInputs input {
     height: 48px;
     border: 1px solid #d9dde5;
+    background-color: #fff;
     border-radius: 10px;
     padding: 0 16px;
     font-size: 15px;
@@ -51,6 +52,7 @@
     font-size: 16px;
     border-radius: 10px;
     border: 1px solid #d9dde5;
+    color: #000;
     background: white;
     cursor: pointer;
 }
