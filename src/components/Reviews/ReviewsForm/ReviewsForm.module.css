@@ -37,3 +37,19 @@
 .submit:hover {
     background-color: #3b4a8c;
 }
+
+@media (max-width:768px) {
+    .title {
+        font-size: 22px;
+    }
+    .par {
+        font-size: 14px;
+    }
+    .contact {
+        flex-direction: column;
+        gap: 0;
+    }
+    .submit {
+        padding: 10px 20px;
+    }
+}

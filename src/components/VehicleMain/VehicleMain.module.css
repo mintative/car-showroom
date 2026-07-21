@@ -15,3 +15,14 @@
 .right {
     flex: 1;
 }
+
+@media (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+    }
+}
+@media (max-width:768px) {
+    .container {
+        padding: 10px;
+    }
+}

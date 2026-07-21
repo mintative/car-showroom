@@ -8,6 +8,7 @@
 .info {
     display: flex;
     justify-content: space-between;
+    gap: 20px;
     align-items: center;
 }
 .reviewer {
@@ -35,26 +36,32 @@
     font-size: 20px;
 }
 
-
+.right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
 
 
 
 .rating {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 5px;
-    flex: 1;
     font-size: 25px;
     color: #666;
 }
 .rating span {
+    display: flex;
+    align-items: center;
     color: orange;
 }
 
 .time {
     display: flex;
     justify-content: end;
-    flex: 1;
     color: #666;
 }
 .bottom {
@@ -63,4 +70,38 @@
 .comment {
     margin: 0;
     font-size: 18px;
+}
+
+@media (max-width:768px) {
+    .bottom {
+        padding: 0;
+    }
+    .container {
+        gap: 10px;
+    }
+    .comment {
+        font-size: 14px;
+    }
+    .rating {
+        font-size: 20px;
+    }
+    .info {
+        flex-direction: column;
+        align-items: start;
+        gap: 10px;
+    }
+    .reviewerAvatar {
+        width: 40px;
+        height: 40px;
+    }
+    .reviewerName {
+        font-size: 16px;
+    }
+    .reviewer {
+        gap: 10px;
+    }
+    .time {
+        font-size: 14px;
+        justify-content: start;
+    }
 }

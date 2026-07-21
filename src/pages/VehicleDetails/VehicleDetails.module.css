@@ -17,6 +17,7 @@
 }
 
 .loading {
+    box-sizing: border-box;
     text-align: center;
     background-color: #e8e8e8;
     padding: 20px;

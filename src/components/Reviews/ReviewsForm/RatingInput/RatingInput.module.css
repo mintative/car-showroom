@@ -35,3 +35,9 @@
 .error {
     color: rgb(194, 0, 0);
 }
+
+@media (max-width:768px) {
+    .error {
+        font-size: 14px;
+    }
+}

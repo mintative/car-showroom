@@ -17,14 +17,17 @@ const ReviewCard = (props:Props) => {
                         <h3 className={s.reviewerName}>{props.review.reviewerName}</h3>
                     </div>
                 </div>
-                <div className={s.rating}>
-                    {[...Array(5)].map((_, i) => (
-                        <span key={i}>
-                            {i < Math.floor(props.review.rating) ? <IoStarSharp /> : <IoStarOutline />}
-                        </span>
-                    ))}
+                <div className={s.right}>
+                    <div className={s.rating}>
+                        {[...Array(5)].map((_, i) => (
+                            <span key={i}>
+                                {i < Math.floor(props.review.rating) ? <IoStarSharp /> : <IoStarOutline />}
+                            </span>
+                        ))}
+                    </div>
+                    <div className={s.time}>{new Date(props.review.date).toLocaleDateString("uk-UA", {day:"numeric",month:"long",year:"numeric"})}</div>
+                
                 </div>
-                <div className={s.time}>{new Date(props.review.date).toLocaleDateString("uk-UA", {day:"numeric",month:"long",year:"numeric"})}</div>
                 
             </div>
             <div className={s.bottom}>

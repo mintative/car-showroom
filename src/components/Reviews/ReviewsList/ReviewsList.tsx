@@ -11,8 +11,8 @@ const ReviewsList = (props:Props) => {
         <section className={s.container} id="reviewsList">
             <h2 className={s.title}>Customer reviews ({props.reviews.length})</h2>
             <div className={s.list}>
-                {props.reviews.map(review=>(
-                    <ReviewCard review={review} />
+                {props.reviews.map((review, index)=>(
+                    <ReviewCard key={index} review={review} />
                 ))}
             </div>
             

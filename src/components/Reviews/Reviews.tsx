@@ -24,7 +24,6 @@ const Reviews = (props: Props) => {
         const updated = [...localReviews, fullReview];
         setLocalReviews(updated);
         localStorage.setItem("reviews", JSON.stringify(updated));
-        console.log(updated);
     };
     const reviews : Comment[] = [
         ...props.reviews,
