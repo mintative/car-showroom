@@ -1,10 +1,6 @@
 # 🚗 Car Showroom
 
-<<<<<<< HEAD
-A single-page application built as a test assignment for the **Intern Frontend Developer** position. The project simulates a virtual car showroom where users can browse available vehicles, search and filter the catalog, view detailed information about each car, and leave reviews.
-=======
 A single-page application that simulates a virtual car showroom where users can browse available vehicles, search and filter the catalog, view detailed information about each car, and leave reviews.
->>>>>>> 6dfa509 (add readme)
 
 ## 🌐 Live Demo
 
@@ -38,20 +34,17 @@ The application is deployed on **Vercel** and connected to a custom domain.
 
 ## 🛠 Tech Stack
 
+* HTML5
+* JavaScript
 * React
 * React Router
 * Vite
 * CSS Modules
-* DummyJSON API
-* LocalStorage
 
-<<<<<<< HEAD
-=======
 ## 🔌 API
 
 * DummyJSON API
 
->>>>>>> 6dfa509 (add readme)
 ## 🚀 Getting Started
 
 ### Prerequisites
